@@ -6,6 +6,7 @@ FactoryBot.define do
     zip_code {"98532"}
     city {"Colorado springs"}
     country {"Les states"}
+    phone {"0604516372"}
     association :user
   end
 end
