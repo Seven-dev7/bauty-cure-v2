@@ -20,8 +20,9 @@
 #  updated_at             :datetime         not null
 #
 FactoryBot.define do
-  factory :user do
-    email {'mail@mail.com'}
+  factory :user do 
+    email {FFaker::Internet.email}
     password {'oussama'}
+    after(:create) { |user| create(:user_information, user_id: user.id)}
   end
 end

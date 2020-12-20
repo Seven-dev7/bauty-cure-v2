@@ -1,40 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe "Products", type: :request do
-
+  let(:product) { create(:product) }
   describe "GET /index" do
     it "returns http success" do
-      get "/products/index"
+      get products_path
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /show" do
     it "returns http success" do
-      get "/products/show"
+      get product_path(product.id)
       expect(response).to have_http_status(:success)
     end
   end
-
-  describe "GET /new" do
-    it "returns http success" do
-      get "/products/new"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /create" do
-    it "returns http success" do
-      get "/products/create"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /edit" do
-    it "returns http success" do
-      get "/products/edit"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 end
