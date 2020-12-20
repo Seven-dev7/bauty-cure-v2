@@ -1,3 +1,11 @@
-<h1>UserInformations#edit</h1>
-<p>Find me in app/views/user_informations/edit.html.erb</p>
-<%= @user_information.id%> <%= @user_information.user.id%> <%= current_user.id%> </p>
+<%= simple_form_for [current_user, @user_information] do |f| %>
+    <% f.association :user %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :address %>
+    <%= f.input :zip_code %>
+    <%= f.input :city %>
+    <%# f.input :country %>
+    <%= f.input :phone %>
+    <%= f.button :submit %>
+<% end %>
