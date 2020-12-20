@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: user_informations
+#
+#  id         :bigint           not null, primary key
+#  first_name :string
+#  last_name  :string
+#  address    :string
+#  zip_code   :string
+#  city       :string
+#  country    :string
+#  phone      :string
+#  user_id    :bigint
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 require 'rails_helper'
 
 RSpec.describe UserInformation, type: :model do

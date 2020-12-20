@@ -1,0 +1,10 @@
+
+    <%= container_card('Profil') do %>
+        <p>Prénom : <%= @user_information.first_name%> </p>
+        <p>Nom de famille : <%= @user_information.last_name%></p>
+        <p>Phone : <%= @user_information.phone%></p>
+        <p>Adresse : <%= @user_information.full_address%></p>
+        <p>Pays :  <%= @user_information.country%></p>
+        <%= link_to 'Modifier le profil', edit_user_user_information_path(@user_information.user_id, @user_information.id), class:'btn btn-success'  %> </li>
+        <%= link_to 'Retour', :back, class:'btn btn-secondary'  %>
+    <%end%>

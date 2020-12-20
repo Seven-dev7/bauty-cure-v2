@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :products, path:'Produits', only: %i(index show)
+  devise_for :users, path:'myUser'
+  resources :users do
+    resources :user_informations, only: %i(show edit)
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'static_pages#landing_page'
 end

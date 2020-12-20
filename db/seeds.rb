@@ -8,12 +8,22 @@
 
 def create_user
     10.times do |n|
-        User.create!(
-            email: "user#{n}@mail.com",
-            password: "oussama"
+        user = User.create!(
+                email: "user#{n}@mail.com",
+                password: "oussama"
+                )
+        UserInformation.create!(
+            first_name: "First Name n °#{n}",
+            last_name: "Last Name n °#{n}",
+            address: "32 rue de la pompe",
+            phone: "0625351254",
+            city: "Paris",
+            zip_code: "93000",
+            country: "France",
+            user_id: user.id
         )
     end
-    p "10 User  mdp:oussama"
+    p "10 User with 10 UserInfor connected  mdp:oussama"
 end
 
 def create_product
@@ -29,8 +39,8 @@ def create_product
 end
 
 def destroy_all
-    User.destroy_all
-    Product.destroy_all
+    models = %w(User UserInformation Product)
+    models.each {|model| model.constantize.destroy_all }
     p "All Destroy"
 end
 

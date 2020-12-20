@@ -1,0 +1,13 @@
+<div class="container">
+
+        <h1>Products#index</h1>
+        <%@products.each do |product| %>
+            <%= container_card('Card Container') do %> 
+                    <p>Nom : <%= product.name %> </p>
+                    <p>Prix : <%= money_display(product.price)%></p>
+                    <p>description : <%= product.description %></p>
+                    <p>Disponible ? : <%= boolean_display(product.available)%></p>
+            <%end%>
+        <% end %>
+
+</div>
