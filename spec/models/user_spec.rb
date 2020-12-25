@@ -27,4 +27,8 @@ RSpec.describe User, type: :model do
     expect(user).to be_valid
   end
   it { should have_one(:user_information) }
+  it { should have_one(:cart) }
+  it 'should have a Cart on creation' do
+    expect(user.cart).to be_an_instance_of(Cart)
+  end
 end
