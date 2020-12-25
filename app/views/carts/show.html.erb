@@ -1,11 +1,12 @@
 <%= container_card('Cart') do %>
     <p><%= @cart.user.user_information.full_name%></p>
-    <p>Nombre de produits : <%= @cart.total_item%></p>
-    <p> 
+    <div>Nombre de produits : <%= @cart.total_item%></div>
+    <div> 
         Liste de produits :  
         <%@cart.cart_products.each do |cart_product| %>
-            <%= cart_product.product.name%>
+            <p><%= cart_product.product.name%></p>
+                <li> <%= button_to 'Supprimer le Produit', user_cart_delete_cart_item_path(current_user.id, cart_product.id), class:'btn btn-danger' %></li>
         <%end%>
-    </p>
+    </div>
     <p>Total : <%=money_display(@cart.total_amount) %></p>
 <%end%>
