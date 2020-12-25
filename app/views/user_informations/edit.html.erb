@@ -5,7 +5,7 @@
     <%= f.input :address %>
     <%= f.input :zip_code %>
     <%= f.input :city %>
-    <%# f.input :country %>
+    <%= f.input :country, as: :string %>
     <%= f.input :phone %>
     <%= f.button :submit %>
 <% end %>

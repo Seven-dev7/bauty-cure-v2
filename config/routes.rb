@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
   devise_for :users, path: 'myUser'
   resources :users do
-    resources :user_informations, only: %i(show edit)
+    resources :user_informations, only: %i(show edit update)
     resources :carts, only: %i(show) do
       resources :cart_products, only: [:destroy]
     end

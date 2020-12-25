@@ -27,16 +27,9 @@ class User < ApplicationRecord
   has_one :cart
   after_create :add_cart_to_user
 
-
-
-
-
-
   private
 
   def add_cart_to_user
-    Cart.create!(
-      user_id: self.id
-    )
+    Cart.create!(user_id: self.id)
   end
 end
