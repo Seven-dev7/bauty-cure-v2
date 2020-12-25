@@ -1,12 +1,11 @@
 <%= container_card('Cart') do %>
-    <p><%= @cart.user.user_information.full_name%></p>
-    <div>Nombre de produits : <%= @cart.total_item%></div>
-    <div> 
-        Liste de produits :  
-        <%@cart.cart_products.each do |cart_product| %>
-            <p><%= cart_product.product.name%></p>
-                <li> <%= button_to 'Supprimer le Produit', user_cart_delete_cart_item_path(current_user.id, cart_product.id), class:'btn btn-danger' %></li>
-        <%end%>
-    </div>
-    <p>Total : <%=money_display(@cart.total_amount) %></p>
-<%end%>
+  <p><%= @cart.user.user_information.full_name %></p>
+  <div>Nombre de produits : <%= @cart.total_item %></div>
+  <div>
+    Liste de produits :
+    <% @cart.cart_products.each do |cart_product| %>
+      <%= render partial: 'cart_products/show', locals: {cart_product: cart_product} %>
+    <% end %>
+  </div>
+  <p>Total : <%= money_display(@cart.total_amount) %></p>
+<% end %>
