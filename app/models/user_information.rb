@@ -24,7 +24,9 @@ class UserInformation < ApplicationRecord
     validates_length_of :zip_code, in: 1..10
     validates_length_of :phone, in: 1..20
 
-
+    def full_name
+        "#{self.first_name} #{self.last_name}"
+    end
     def full_address
         "#{self.address}, #{self.zip_code} #{self.city}"
     end

@@ -1,9 +1,9 @@
 module ApplicationHelper
 
     def container_card(title, &block)
-        content_tag(:div, class: "row d-flex flex-row") do
-            content_tag(:div, class: "col col-4") do
-                content_tag(:div, class: "card card-accent-info mt-5 m-3 ml-3") do
+        #content_tag(:div, class: "d-flex align-content-start flex-wrap") do
+            #content_tag(:div, class: "col col-4") do
+                content_tag(:div, class: "card card-accent-info m-5 p-1") do
                     content_tag(:div, class: "card-header") do
                         title
                     end +
@@ -11,8 +11,8 @@ module ApplicationHelper
                         capture(&block)
                     end
                 end
-            end
-        end
+            #end
+        #end
     end
     
     def boolean_display(boolean)
