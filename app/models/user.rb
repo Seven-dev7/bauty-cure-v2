@@ -25,6 +25,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :trackable, :confirmable
   has_one :user_information
   has_one :cart
+  has_many :orders
   after_create :add_cart_to_user
 
   private
