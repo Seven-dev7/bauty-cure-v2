@@ -10,6 +10,7 @@ class Ability
     can :read, [Product, UserInformation]
     if user
       can :manage, UserInformation, user_id: user.id
+      can :add_to_cart, Product
     else
       can :read, :all
     end

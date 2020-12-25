@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :products, path:'Produits', only: %i(index show)
+  resources :products, path:'Produits', only: %i(index show) do
+    post 'add_to_cart'
+  end
   devise_for :users, path:'myUser'
   resources :users do
     resources :user_informations, only: %i(show edit)

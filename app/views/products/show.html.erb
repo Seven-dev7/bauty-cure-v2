@@ -6,7 +6,7 @@
                 <p>Prix : <%= money_display(@product.price)%></p>
                 <p>description : <%= @product.description %></p>
                 <p>Disponible ? : <%= boolean_display(@product.available)%></p>
-                <%= link_to 'Ajouter au Panier', root_path, class:'btn btn-primary'%>
+                <%= button_to 'Ajouter au Panier', product_add_to_cart_path(product_id: @product.id, cart_id: current_user.cart.id), class:'btn btn-primary'%>
             <%end%>
         </div>
     </div>
