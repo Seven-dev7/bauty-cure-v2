@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, path:'myUser'
   resources :users do
     resources :user_informations, only: %i(show edit)
+    resources :carts, only: %i(show)
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'static_pages#landing_page'

@@ -1,0 +1,11 @@
+<%= container_card('Cart') do %>
+    <p><%= @cart.user.user_information.full_name%></p>
+    <p>Nombre de produits : <%= @cart.total_item%></p>
+    <p> 
+        Liste de produits :  
+        <%@cart.cart_products.each do |cart_product| %>
+            <%= cart_product.product.name%>
+        <%end%>
+    </p>
+    <p>Total : <%=money_display(@cart.total_amount) %></p>
+<%end%>

@@ -12,7 +12,9 @@
                 <%= link_to 'Produits', products_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <%if current_user %>
+                    <%= link_to 'Panier', user_cart_path(current_user.id, current_user.cart.id), class: 'nav-link' %>
+                <%end%>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>

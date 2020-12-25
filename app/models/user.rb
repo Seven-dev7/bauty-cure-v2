@@ -32,7 +32,6 @@ class User < ApplicationRecord
 
 
 
-
   private
 
   def add_cart_to_user

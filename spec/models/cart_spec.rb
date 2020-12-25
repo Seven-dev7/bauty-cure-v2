@@ -15,4 +15,5 @@ RSpec.describe Cart, type: :model do
     expect(cart).to be_valid
   end
   it { should belong_to(:user) }
+  it { should have_many(:cart_products) }
 end
