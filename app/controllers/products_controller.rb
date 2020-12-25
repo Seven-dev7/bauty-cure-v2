@@ -13,4 +13,5 @@ class ProductsController < ApplicationController
     redirect_to user_cart_path(current_user.id,params[:cart_id])
   end
 
+
 end
