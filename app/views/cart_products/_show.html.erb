@@ -4,7 +4,7 @@
     <li>Nom: <%= p.name %> </li>
     <li>Prix: <%= p.price %> </li>
     <li>Disponible: <%= p.available %> </li>
-    <li> <%= button_to 'Supprimer le Produit', user_cart_cart_product_path(current_user.id, cart_product.id, cart_product.id), method: :delete, class: 'btn btn-danger' %>
+    <li> <%= button_to 'Supprimer le Produit', user_cart_cart_product_path(current_user.id, current_user.cart.id, cart_product.id), method: :delete, class: 'btn btn-danger' %>
     </li>
   </ul>
 </div>
