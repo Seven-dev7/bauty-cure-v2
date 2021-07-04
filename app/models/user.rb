@@ -25,11 +25,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :trackable, :confirmable
   has_one :user_information
   has_one :cart
-  after_create :add_cart_to_user
+  after_create :create_user_cart, :create_user_information
 
   private
 
-  def add_cart_to_user
+  def create_user_information
+    UserInformation.create!(user_id: id)
+  end
+
+  def create_user_cart
     Cart.create!(user_id: self.id)
   end
 end

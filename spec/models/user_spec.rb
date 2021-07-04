@@ -31,4 +31,8 @@ RSpec.describe User, type: :model do
   it 'should have a Cart on creation' do
     expect(user.cart).to be_an_instance_of(Cart)
   end
+
+  it 'creates a user_information' do
+    expect(User.create!(email: 'test@test.com', password: 'blablabla').user_information).not_to eq nil
+  end
 end

@@ -39,6 +39,8 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.1'
   gem 'shoulda-matchers', '~> 4.4', '>= 4.4.1'
   gem 'ffaker', '~> 2.17'
+  gem 'better_errors', '~> 2.9', '>= 2.9.1'
+  gem 'binding_of_caller', '~> 1.0'
 end
 
 group :development do
