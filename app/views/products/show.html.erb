@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <%= container_card("Card Container #{@product.name}") do %> 
+                <p>Nom : <%= @product.name %> </p>
+                <p>Prix : <%= money_display(@product.price)%></p>
+                <p>description : <%= @product.description %></p>
+                <p>Disponible ? : <%= boolean_display(@product.available)%></p>
+                <%= button_to 'Ajouter au Panier', product_add_to_cart_path(product_id: @product.id, cart_id: current_user.cart.id), class:'btn btn-primary'%>
+            <%end%>
+        </div>
+    </div>
+</div>

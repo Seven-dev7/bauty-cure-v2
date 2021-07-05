@@ -1,0 +1,11 @@
+<%= simple_form_for [current_user, @user_information] do |f| %>
+    <% f.association :user %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :address %>
+    <%= f.input :zip_code %>
+    <%= f.input :city %>
+    <%= f.input :country, as: :string %>
+    <%= f.input :phone %>
+    <%= f.button :submit %>
+<% end %>

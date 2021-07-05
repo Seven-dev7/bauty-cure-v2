@@ -1,0 +1,21 @@
+<div class="container col-12 col-sd-12">
+  <div class="row col-lg-12 col-md-12 col-sd-12">
+    <div class="d-flex align-content-around flex-wrap">
+      <% @products.each do |product| %>
+        <%= link_to product_path(product.id), class: 'text-dark text-justify text-decoration-none' do %>
+          <%= container_card("Card Container #{product.name}") do %>
+            <p>Nom : <%= product.name %> </p>
+            <p>Prix : <%= money_display(product.price) %></p>
+            <p>description : <%= product.description %></p>
+            <p>Disponible ? : <%= boolean_display(product.available) %></p>
+            <% if user_signed_in? %>
+              <%= button_to 'Ajouter au Panier', product_add_to_cart_path(product_id: product.id, cart_id: current_user.cart.id), class: 'btn btn-primary' %>
+            <% else %>
+              <%= button_to 'Ajouter au Panier', new_user_session_path, class: 'btn btn-primary' %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
